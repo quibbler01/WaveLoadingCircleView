@@ -152,7 +152,7 @@ class CirclesLoadingView : View {
         super.onDraw(canvas)
         var startPoint = width / 2 - (CIRCLE_COUNT - 1) * (circleRadius + circleMargin / 2)
         for (i in 0 until CIRCLE_COUNT) {
-            paint.color = colors[i]
+            paint.color = colors[i % colors.size]
             canvas?.drawCircle(startPoint, height / 2f + positions[i], circleRadius, paint)
             startPoint += 2 * circleRadius + circleMargin
         }
