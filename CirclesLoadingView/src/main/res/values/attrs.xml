@@ -5,6 +5,9 @@
         <!--radius of circle-->
         <attr name="circleRadius" format="dimension" />
 
+        <!--number of circle-->
+        <attr name="circleCount" format="integer" />
+
         <!--margin between circle-->
         <attr name="circleMargin" format="dimension" />
 

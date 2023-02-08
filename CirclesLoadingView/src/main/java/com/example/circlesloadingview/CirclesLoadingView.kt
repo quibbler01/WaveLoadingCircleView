@@ -69,6 +69,8 @@ class CirclesLoadingView : View {
      */
     private var circleRadius = DEFAULT_CIRCLE_RADIUS
 
+    private var circleCount = CIRCLE_COUNT
+
     private var circleMargin = DEFAULT_CIRCLE_MARGIN
     private var animDistance = DEFAULT_ANIM_DISTANCE
 
@@ -113,6 +115,7 @@ class CirclesLoadingView : View {
     constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
         val typedValue = context?.theme?.obtainStyledAttributes(attrs, R.styleable.CirclesLoadingView, 0, 0)
         typedValue?.let {
+            circleCount = it.getInt(R.styleable.CirclesLoadingView_circleCount, this.circleCount)
             circleRadius = it.getDimension(R.styleable.CirclesLoadingView_circleRadius, this.circleRadius)
             circleMargin = it.getDimension(R.styleable.CirclesLoadingView_circleMargin, this.circleMargin)
             animDistance = it.getDimension(R.styleable.CirclesLoadingView_animDistance, this.animDistance)
