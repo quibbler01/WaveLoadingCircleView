@@ -88,7 +88,7 @@ class CirclesLoadingView : View {
     /**
      * vertical offset for each circle animation, which size should equal with [CIRCLE_COUNT]
      */
-    private val positions = MutableList(CIRCLE_COUNT) {
+    private val positions = MutableList(circleCount) {
         0f
     }
 
@@ -127,7 +127,7 @@ class CirclesLoadingView : View {
 
         val animators = mutableListOf<Animator>()
         for (i in 0 until CIRCLE_COUNT) {
-            animators.add(ObjectAnimator.ofFloat(0f, animDistance).apply {
+            animators.add(ObjectAnimator.ofFloat(-animDistance / 2f, animDistance / 2f).apply {
                 this.duration = animDuration
                 this.startDelay = i * animDelay
                 this.repeatCount = INFINITE
